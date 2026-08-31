@@ -1,0 +1,284 @@
+:root {
+  --background: #fafafa;
+  --surface: #ffffff;
+  --border: #eceeec;
+  --primary: #8dbb8c;
+  --primary-soft: #eef5ea;
+  --text-primary: #222222;
+  --text-secondary: #6b6b6b;
+  --content-width: 860px;
+  --page-gutter: clamp(20px, 4vw, 40px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #4e764f;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: #355c36;
+}
+
+a:focus-visible {
+  outline: 3px solid rgba(141, 187, 140, 0.45);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10;
+  top: 12px;
+  left: 12px;
+  transform: translateY(-160%);
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.header-inner,
+.policy-document,
+.footer-inner {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+}
+
+.header-inner {
+  padding: 54px var(--page-gutter) 42px;
+}
+
+.app-name {
+  margin: 0 0 5px;
+  color: #547c55;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.policy-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  margin: 20px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.policy-dates div {
+  display: flex;
+  gap: 0.55em;
+}
+
+.policy-dates dt,
+.policy-dates dd {
+  margin: 0;
+}
+
+.policy-dates dt {
+  font-weight: 600;
+}
+
+.policy-document {
+  margin-block: 38px 64px;
+  padding: 12px var(--page-gutter) 42px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.version-note {
+  margin: 6px 0 8px;
+  padding: 13px 16px;
+  border-left: 4px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  background: var(--primary-soft);
+  color: #3f6040;
+  font-size: 0.9rem;
+}
+
+section {
+  padding-top: 34px;
+}
+
+section + section {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+h2 span {
+  color: #638a64;
+  font-variant-numeric: tabular-nums;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul {
+  margin: 0.8em 0 1.25em;
+  padding-left: 1.45em;
+}
+
+li {
+  margin: 0.18em 0;
+  padding-left: 0.18em;
+}
+
+li::marker {
+  color: var(--primary);
+}
+
+.email-link {
+  display: inline-block;
+  padding: 3px 0;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 20px;
+  padding: 26px var(--page-gutter) 32px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-inner a {
+  color: inherit;
+}
+
+@media (max-width: 680px) {
+  body {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .header-inner {
+    padding-top: 38px;
+    padding-bottom: 32px;
+  }
+
+  .policy-document {
+    margin-block: 0;
+    padding-top: 24px;
+    border: 0;
+    border-radius: 0;
+  }
+
+  section {
+    padding-top: 28px;
+  }
+
+  .site-footer {
+    margin-top: 0;
+  }
+
+  .footer-inner {
+    display: block;
+  }
+
+  .footer-inner p + p {
+    margin-top: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  :root {
+    --background: #ffffff;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.65;
+  }
+
+  .skip-link {
+    display: none;
+  }
+
+  .site-header,
+  .site-footer,
+  .policy-document {
+    border-color: #d8d8d8;
+  }
+
+  .policy-document {
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+}
+
